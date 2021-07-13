@@ -88,7 +88,7 @@ func createSubject(form SubjectForm) (*resty.Response, error) {
 	}
 	return CreateRequest().
 		SetBody(string(jsonBytes)).
-		Post("http://localhost/api/subjects")
+		Post("api/subjects")
 }
 
 func storeSubject(body []byte) {

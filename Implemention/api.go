@@ -24,6 +24,7 @@ func (api *Api) TheResponseCodeShouldBe(code int) (err error) {
 func CreateRequest() *resty.Request {
 	client := resty.New()
 	return client.
+		SetHostURL(GetHost()).
 		R().
 		EnableTrace().
 		SetHeader("Content-Type", "application/json").

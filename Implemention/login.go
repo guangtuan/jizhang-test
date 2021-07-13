@@ -21,11 +21,12 @@ func (api *Api) LoginWithEmailAndPassword(email, password string) (err error) {
 		return
 	}
 	resp, err := client.
+		SetHostURL(GetHost()).
 		R().
 		EnableTrace().
 		SetHeader("Content-Type", "application/json").
 		SetBody(string(jsonBytes)).
-		Post("http://localhost/login")
+		Post("login")
 	if err != nil {
 		return
 	}
